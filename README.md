@@ -1,7 +1,7 @@
 # Remote Control Server
 
 
-## Clone Server Soruce Code
+## Clone Server Source Code
 
 Run `git clone https://github.com/BullTronics/Remote-Control-Server.git`
 
@@ -15,4 +15,4 @@ Run `npm start` for a dev server. Navigate to `http://localhost:33986/`.
 
 ## Further help
 
-To get more help on the RemoteControlServe contact `admin@bulltronics.com`.
+To get more help on the RemoteControlServer, contact `admin@bulltronics.com`.
