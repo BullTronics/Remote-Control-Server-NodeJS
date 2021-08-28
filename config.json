@@ -2,7 +2,7 @@
     "title": "Remote Control Server || BullTronics",
     "version": 1,
     "port": 33986,
-    "secret": "ffffffffffffffffffffffff12345678",
+    "secret": "a4e1112f45e84f785358bb86ba750f48",
     "public_paths": [
         "/",
         "/Version",
