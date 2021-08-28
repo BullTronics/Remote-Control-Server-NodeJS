@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>BullTronics</title>
+      <style>
+         .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%); /* for IE 9 */
+            -webkit-transform: translate(-50%, -50%); /* for Safari */
+
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            min-width: 300px;
+         }
+         .align-right {
+            text-align: right;
+            padding: 5px;
+         }
+         .align-left {
+            text-align: left;
+            padding: 5px;
+         }
+      </style>
+   </head>
+   <body style="background-color: black; color: white;">
+      <div class="center">
+         <h3 id="title">Remote Control Server || BullTronics</h3>
+         <form action="#" onsubmit="return false">
+            <table style="margin: 5px; width: 100%;">
+               <tr>
+                  <td class="align-right">
+                     Status:
+                  </td>
+                  <td class="align-left" id="status">
+                     Running
+                  </td>
+               </tr>
+               <tr>
+                  <td class="align-right">
+                     Version:
+                  </td>
+                  <td class="align-left" id="version">
+                     1.0
+                  </td>
+               </tr>
+            </table>
+         </form><br>
+         <a href="/setting" style="text-decoration: none; color: lightblue;">Config Server</a>
+      </div>
+   </body>
+   <script>
+      
+      function fetchVersion() {
+         document.getElementById("status").innerHTML = "Loading...";
+         const xhttp = new XMLHttpRequest();
+         xhttp.onload = function() {
+            let responseObject = JSON.parse(this.responseText);
+            document.title = responseObject.data.title;
+            document.getElementById("version").innerHTML = responseObject.data.version;
+            document.getElementById("title").innerHTML = responseObject.data.title;
+            document.getElementById("status").innerHTML = "Running";
+            let hostsInnnerHtml = "";
+            for(let index = 0 ; index < responseObject.data.hosts.length ; index++) {
+               let address = responseObject.data.hosts[index];
+               let el = `<input id="host_${index}" type="text" value="${address}" readonly disabled><br>`;
+               hostsInnnerHtml += el;
+            }
+            document.getElementById("hosts").innerHTML = hostsInnnerHtml;
+         }
+         xhttp.open("GET", "/Version");
+         xhttp.send();
+      }
+
+      fetchVersion();
+   </script>
+</html>
