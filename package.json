@@ -9,11 +9,14 @@
     "express": "^4.17.1",
     "loudness": "^0.4.1",
     "multer": "^1.4.3",
+    "node-windows": "^1.0.0-beta.5",
     "robotjs": "^0.6.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "install-windows-service": "node install-windows-service.js",
+    "uninstall-windows-service": "node uninstall-windows-service.js"
   },
   "author": "Vipul Chasta",
   "license": "MIT",

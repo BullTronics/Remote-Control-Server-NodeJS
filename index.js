@@ -23,7 +23,7 @@ loadConfig();
 var app = express();
 
 var server = app.listen(global.server.port, function () {
-	var host = server.address().address;
+	var host = 'localhost';
 	var port = server.address().port;
 
 	console.log("%s listening at http://%s:%s", global.server.title, host, port);
