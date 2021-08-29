@@ -13,6 +13,15 @@ Navigate to source code directory and Run `npm i`
 
 Run `npm start`
 
+## Install Remote-Control-Server as Service [Optional]
+
+**Windows:** `npm run install-windows-service`<br /><br />
+*Make sure while installing, no other server is running on the same port*
+
+## Uninstall Remote-Control-Server as Service [Optional]
+
+**Windows:** `npm run uninstall-windows-service`
+
 ## Configure Remote-Control-Server
 
 Navigate to `http://localhost:33986/`
