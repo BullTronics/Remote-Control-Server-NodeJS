@@ -57,11 +57,11 @@ app.use(function (req, res, next) {
 			let currentTimestampInMs = new Date().valueOf();
 			let requestedTimestampInMs = requestBody.timestamp;
 
-			if(requestedTimestampInMs < currentTimestampInMs && requestedTimestampInMs + (60*1000) > currentTimestampInMs ) {
+			if(requestedTimestampInMs < currentTimestampInMs + (2*60*1000) && requestedTimestampInMs + (2*60*1000) > currentTimestampInMs ) {
 				console.log("Authorised Request");
 				next();
 			} else {
-				let errorMsg = "Expired Request, Timestamp Mismatch";
+				let errorMsg = `Expired Request, Timestamp Mismatch, currentTimestampInMs: ${currentTimestampInMs}, requestedTimestampInMs: ${requestedTimestampInMs}`;
 				console.log(errorMsg);
 				res.status(410).send({message: errorMsg, success: false});
 			}
