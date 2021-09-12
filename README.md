@@ -40,7 +40,11 @@ Remote-Control-Server has robotjs as its dependency, Complete all OS specific pr
 &emsp;&emsp;Run these commands from an administrative shell to install the "software" dependencias (Visual Studio, Python) on windows:<br />
 &emsp;&emsp;> `npm install --global --production windows-build-tools@4.0.0` or `npm install -g windows-build-tools` <br />
 &emsp;&emsp;> `npm install -g node-gyp` <br />
-&emsp;&emsp;> `npm install robotjs`
+&emsp;&emsp;> `npm install robotjs`<br /><br />
+&emsp;&emsp;**Quick Reference for MacOS** <br />
+&emsp;&emsp;Run these commands on terminal:<br />
+&emsp;&emsp;> `sudo rm -rf /Library/Developer/CommandLineTools` <br />
+&emsp;&emsp;> `sudo xcode-select --install` <br />
 <br /><br />
 To access Remote-Control-Server from remote client, Use ZeroTier to create Virtual Network `https://zerotier.com/` <br /><br />
 To get more help on the Remote-Control-Server, contact `admin@bulltronics.com`.
